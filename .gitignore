@@ -13,6 +13,7 @@
 .vsconfig
 Assets/SimpleZombies.meta
 Assets/SimpleZombies/*
+Assets/SimpleMilitary/*
 
 *.meta
 *.cs.meta

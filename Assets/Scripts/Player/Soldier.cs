@@ -5,6 +5,12 @@ using UnityEngine;
 public class Soldier : MonoBehaviour, IDamageable, IPlaceable {
     [SerializeField] private float health;
 
+    private FieldOfView fov;
+
+    private void Awake() {
+        fov = GetComponent<FieldOfView>();
+    }
+
     public void TakeHealth(float value) {
         health -= value;
 
@@ -18,6 +24,8 @@ public class Soldier : MonoBehaviour, IDamageable, IPlaceable {
         Destroy(GetComponent<CollisionDetector>());
 
         gameObject.layer = LayerMask.NameToLayer("Player");
+
+        fov.Hide();
     }
 
     public void Initialize() {
