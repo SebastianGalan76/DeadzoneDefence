@@ -17,7 +17,7 @@ namespace Zombie {
             }
         }
 
-        public float getSpawnRadius() {
+        public float GetSpawnRadius() {
             return spawnRadius;
         }
 
