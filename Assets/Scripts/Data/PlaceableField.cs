@@ -6,10 +6,6 @@ public class PlaceableField : MonoBehaviour
 
     private MeshRenderer meshRenderer;
 
-    private void Awake() {
-        meshRenderer = GetComponent<MeshRenderer>();
-    }
-
     public void Show() {
         gameObject.SetActive(true);
     }
@@ -17,6 +13,10 @@ public class PlaceableField : MonoBehaviour
         gameObject.SetActive(false);
     }
     public void ChangeColor(Material material) {
+        if(meshRenderer == null) {
+            meshRenderer = GetComponent<MeshRenderer>();
+        }
+
         meshRenderer.material = material;
     }
     public bool IsAllowed(UnitType objectType) {
