@@ -13,3 +13,6 @@ https://www.youtube.com/watch?v=2aPbrENv-f8
 <h2>FieldOfView</h2>
 The material shows the field of view system <br>
 https://www.youtube.com/watch?v=6Q5iHdSykgI
+
+<h2>Shooting System</h2>
+https://www.youtube.com/watch?v=TnQFagaS-P8
