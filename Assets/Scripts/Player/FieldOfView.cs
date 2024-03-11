@@ -40,11 +40,9 @@ public class FieldOfView : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        /*if(isShowed) {
+        if(isShowed) {
             DrawFieldOfView();
-        }*/
-
-        DrawFieldOfView();
+        }
     }
 
     public void Show() {
@@ -60,7 +58,6 @@ public class FieldOfView : MonoBehaviour {
         visibleTargets.Clear();
 
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, enemyMask);
-
         for(int i = 0;i < targetsInViewRadius.Length;i++) {
             Transform target = targetsInViewRadius[i].transform;
             Vector3 dirToTarget = (target.position - transform.position).normalized;
@@ -90,6 +87,25 @@ public class FieldOfView : MonoBehaviour {
         }
     }
 
+    public Transform GetClosestEnemy() {
+        Transform bestTarget = null;
+        float closestDistanceSqr = Mathf.Infinity;
+        Vector3 currentPosition = transform.position;
+
+        foreach(Transform potentialTarget in visibleTargets) {
+            if(potentialTarget != null) {
+                Vector3 directionToTarget = potentialTarget.transform.position - currentPosition;
+                float dSqrToTarget = directionToTarget.sqrMagnitude;
+
+                if(dSqrToTarget < closestDistanceSqr) {
+                    closestDistanceSqr = dSqrToTarget;
+                    bestTarget = potentialTarget;
+                }
+            }
+        }
+
+        return bestTarget;
+    }
 
     private void DrawFieldOfView() {
         List<Vector3> viewPoints = new List<Vector3>();

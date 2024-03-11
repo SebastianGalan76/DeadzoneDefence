@@ -26,7 +26,7 @@ namespace Zombie {
                 return;
             }
 
-            Instantiate(zombiePrefab, getRandomPosition(), Quaternion.identity);
+            Instantiate(zombiePrefab, getRandomPosition(), new Quaternion(0,180,0,0));
         }
         private Vector3 getRandomPosition() {
             return transform.position + new Vector3(Random.Range(-spawnRadius, spawnRadius), 0, Random.Range(-spawnRadius, spawnRadius));
