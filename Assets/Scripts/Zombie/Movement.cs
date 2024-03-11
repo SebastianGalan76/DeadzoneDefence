@@ -24,16 +24,15 @@ namespace Zombie {
 
             currentDestination = destination;
             agent.SetDestination(destination);
+
+            animator.Play("Zombie_Walk");
         } 
 
         private void StopMoving() {
             agent.isStopped = true;
 
             currentDestination = Vector3.zero;
-        }
-
-        public void Die() {
-            agent.isStopped = true;
+            animator.Play("Zombie_Idle");
         }
 
         public float GetViewRadius() {
