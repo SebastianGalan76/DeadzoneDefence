@@ -16,3 +16,6 @@ https://www.youtube.com/watch?v=6Q5iHdSykgI
 
 <h2>Shooting System</h2>
 https://www.youtube.com/watch?v=TnQFagaS-P8
+
+<h2>Airplane System & Bomber</h2>
+https://www.youtube.com/watch?v=4rVqxtCw7nM
