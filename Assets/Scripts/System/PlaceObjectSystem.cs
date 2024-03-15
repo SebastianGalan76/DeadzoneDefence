@@ -95,10 +95,12 @@ public class PlaceObjectSystem : MonoBehaviour
     }
 
     private void PlaceObject() {
-        placeable?.AfterPlace();
-
         currentObject = null;
-        StartOperation(currentUnit);
+        if(placeable != null && placeable.AfterPlace()) {
+            StartOperation(currentUnit);
+        } else {
+            StopOperation();
+        }
     }
 
     private void Failed() {

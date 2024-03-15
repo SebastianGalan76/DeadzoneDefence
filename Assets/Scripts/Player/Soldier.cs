@@ -21,7 +21,7 @@ public class Soldier : MonoBehaviour, IDamageable, IPlaceable {
         }
     }
 
-    public void AfterPlace() {
+    public bool AfterPlace() {
         Destroy(GetComponent<Rigidbody>());
         Destroy(GetComponent<CollisionDetector>());
 
@@ -29,6 +29,7 @@ public class Soldier : MonoBehaviour, IDamageable, IPlaceable {
         weapon.enabled = true;
 
         fov.Hide();
+        return true;
     }
 
     public void Initialize() {
